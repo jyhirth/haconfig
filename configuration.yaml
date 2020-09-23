@@ -20,3 +20,7 @@ homeseer:
   password: !secret homeseer_pw
   name_template: 'HS - {{ device.location2 }} {{ device.location }} {{ device.name }}'
   allow_events: True
+
+jewish_calendar:
+  diaspora: false
+  
