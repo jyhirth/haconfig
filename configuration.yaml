@@ -18,5 +18,5 @@ homeseer:
   ascii_port: 11000
   username: !secret homeseer_user
   password: !secret homeseer_pw
-  name_template: 'HS - {{ device.location2 }} {{ device.location }} {{ device.name }'
+  name_template: 'HS - {{ device.location2 }} {{ device.location }} {{ device.name }}'
   allow_events: True
