@@ -2,6 +2,16 @@
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
+homeassistant:
+  name: 24W
+  latitude: 40.607964
+  longitude: -73.740870
+  elevation: 3
+  unit_system: imperial
+  time_zone: America/New_York
+  external_url: !secret externalurl
+  internal_url: "http://192.168.24.186:8123"
+  
 # Text to speech
 tts:
   - platform: google_translate
