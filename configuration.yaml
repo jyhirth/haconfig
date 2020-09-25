@@ -34,6 +34,10 @@ homeseer:
 #jewish_calendar:
 #  diaspora: false
 
+google:
+  client_id: !secret gcalclientid
+  client_secret: !secret gcalsecret
+
 sensor:
 - platform: time_date
   display_options:
