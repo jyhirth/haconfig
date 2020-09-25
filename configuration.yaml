@@ -31,6 +31,29 @@ homeseer:
   name_template: 'HS - {{ device.location2 }} {{ device.location }} {{ device.name }}'
   allow_events: True
 
-jewish_calendar:
-  diaspora: false
-  
+#jewish_calendar:
+#  diaspora: false
+
+sensor:
+- platform: time_date
+  display_options:
+    - 'time'
+    - 'date'
+    - 'date_time'
+    - 'date_time_utc'
+    - 'date_time_iso'
+    - 'time_date'
+    - 'time_utc'
+    - 'beat'
+
+history:
+  exclude:
+    entities:
+      - sensor.date
+      - sensor.date_time
+      - sensor.date_time_utc
+      - sensor.date_time_iso
+      - sensor.internet_time
+      - sensor.time
+      - sensor.time_date
+      - sensor.time_utc
