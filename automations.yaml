@@ -1,1 +1,35 @@
-[]
+# Restarts HA every day at 3a except Saturdays
+- id: '1605105863267'
+  alias: Restart HA
+  description: ''
+  trigger:
+  - platform: time
+    at: 03:00:00
+  condition:
+  - condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+    - sun
+  action:
+  - service: homeassistant.restart
+  mode: single
+#
+# Turns on Shabbat Mode toggle if the Home Automation Candle Lighting sensor turns on
+- id: '1605107317632'
+  alias: Turn on Shabbat Mode
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: calendar.home_automation_shabbat
+    to: 'on'
+    from: 'off'
+  action:
+  - service: input_boolean.turn_on
+    data: {}
+    entity_id: input_boolean.shabbat_mode_toggle
+  mode: single
+#

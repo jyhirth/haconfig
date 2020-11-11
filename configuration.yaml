@@ -10,7 +10,7 @@ homeassistant:
   unit_system: imperial
   time_zone: America/New_York
   external_url: !secret externalurl
-  internal_url: "http://192.168.24.186:8123"
+  internal_url: "http://192.168.24.180:8123"
   
 # Text to speech
 tts:
@@ -61,3 +61,8 @@ history:
       - sensor.time
       - sensor.time_date
       - sensor.time_utc
+
+input_boolean:
+  shabbat_mode_toggle:
+    name: Shabbat Mode
+    icon: mdi:calendar-star
