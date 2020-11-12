@@ -1,10 +1,9 @@
-# Restarts HA every day at 3a except Saturdays
 - id: '1605105863267'
   alias: Restart HA
   description: ''
   trigger:
   - platform: time
-    at: 03:00:00
+    at: 03:30:00
   condition:
   - condition: time
     weekday:
@@ -17,8 +16,6 @@
   action:
   - service: homeassistant.restart
   mode: single
-#
-# Turns on Shabbat Mode toggle if the Home Automation Candle Lighting sensor turns on
 - id: '1605107317632'
   alias: Turn on Shabbat Mode
   description: ''
@@ -32,4 +29,15 @@
     data: {}
     entity_id: input_boolean.shabbat_mode_toggle
   mode: single
-#
+- id: '1605215282314'
+  alias: Turn the bathroom fan off after 10 mins
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: switch.hs_downstairs_bathroom_fan
+    to: 'on'
+    for: 00:10:00
+  action:
+  - service: switch.turn_off
+    entity_id: switch.hs_downstairs_bathroom_fan
+  mode: single
