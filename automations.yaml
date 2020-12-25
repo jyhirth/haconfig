@@ -1,6 +1,4 @@
-- id: '1605105863267'
-  alias: Restart HA
-  description: ''
+- alias: Restart HA at 3a every day except Shabbat
   trigger:
   - platform: time
     at: 03:30:00
@@ -16,26 +14,8 @@
   action:
   - service: homeassistant.restart
   mode: single
-- id: '1605107317632'
-  alias: Turn on Shabbat Mode
-  description: ''
-  trigger:
-  - platform: state
-    entity_id: calendar.home_automation_shabbat
-    to: 'on'
-    from: 'off'
-  - platform: state
-    entity_id: calendar.hebcal_shabbat
-    from: 'off'
-    to: 'on'
-  action:
-  - service: input_boolean.turn_on
-    data: {}
-    entity_id: input_boolean.shabbat_mode_toggle
-  mode: single
-- id: '1605215282314'
-  alias: Turn the bathroom fan off after 10 mins
-  description: ''
+
+- alias: Turn off the bathroom fan after 10 mins
   trigger:
   - platform: state
     entity_id: switch.hs_downstairs_bathroom_fan
@@ -45,3 +25,25 @@
   - service: switch.turn_off
     entity_id: switch.hs_downstairs_bathroom_fan
   mode: single
+
+- alias: Turn on the exterior lights before sunset
+  trigger:
+    platform: numeric_state
+    entity_id: sun.sun
+    value_template: "{{ state_attr('sun.sun', 'elevation') }}"
+    below: 7.5
+  action:
+    service: homeassistant.turn_on
+    entity_id: group.exteriorlights
+
+- alias: Turn off the exterior lights after sunrise
+  trigger:
+    platform: numeric_state
+    entity_id: sun.sun
+    value_template: "{{ state_attr('sun.sun', 'elevation') }}"
+    above: 7.5
+  action:
+    service: homeassistant.turn_off
+    entity_id: group.exteriorlights
+
+

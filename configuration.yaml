@@ -28,11 +28,8 @@ homeseer:
   ascii_port: 11000
   username: !secret homeseer_user
   password: !secret homeseer_pw
-  name_template: 'HS - {{ device.location2 }} {{ device.location }} {{ device.name }}'
-  allow_events: True
-
-#jewish_calendar:
-#  diaspora: false
+  name_template: '{{ device.name }}'
+  allow_events: false
 
 google:
   client_id: !secret gcalclientid
@@ -52,7 +49,10 @@ history:
       - sensor.date_time
       - sensor.time
 
-input_boolean:
-  shabbat_mode_toggle:
-    name: Shabbat Mode
-    icon: mdi:calendar-star
+#input_boolean:
+#  shabbat_mode_toggle:
+#    name: Shabbat Mode
+#    icon: mdi:calendar-star
+
+#jewish_calendar:
+#  diaspora: true

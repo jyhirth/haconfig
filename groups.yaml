@@ -1,0 +1,53 @@
+exteriorlights:
+  name: Exterior Lights
+  entities:
+    - switch.front_door_light
+    - switch.back_door_light
+
+shabbatalwayson:
+  name: Shabbat Always On
+  entities:
+    - switch.boiler_room_bulb
+    - switch.laundry_room_bulb
+    - switch.dining_room_single_light
+    - switch.kitchen_closet_light
+    - switch.kitchen_counter_light_d
+    - switch.kitchen_counter_light_m
+    - light.living_room_light
+    - switch.upstairs_bathroom_switch
+    - switch.jy_shabbos_lamp
+    - switch.kendra_shabbos_lamp
+    - switch.kendra_noise_machine
+
+shabbatalwaysoff:
+  name: Shabbat Always Off
+  entities:
+    - switch.basement_lights
+    - switch.basement_stairs
+    - switch.upstairs_hallway_light
+    - switch.ella_light
+    - switch.noa_light
+    - switch.kendra_table_lamp
+    - light.master_bedroom_lights
+
+shabbatdayon:
+  name: Shabbat Day On
+  entities:
+    - switch.downstairs_bathroom_light
+    - switch.den_lamp
+    - switch.den_light
+    - light.dining_room_main_lights
+    - switch.kitchen_lights_d
+    - switch.kitchen_lights_m
+    - switch.kitchen_lights_table
+
+shabbatnightoff:
+  name: Shabbat Night Off
+  entities:
+    - switch.downstairs_bathroom_light
+    - switch.den_light
+    - switch.den_lamp
+    - light.dining_room_main_lights
+    - switch.kitchen_lights_d
+    - switch.kitchen_lights_m
+    - switch.kitchen_lights_table
