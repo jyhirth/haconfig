@@ -1,0 +1,101 @@
+- name: Shabbat_Start
+  entities:
+    switch.boiler_room_bulb:
+      state: 'on'
+    switch.laundry_room_bulb:
+      state: 'on'
+    switch.dining_room_single_light:
+      state: 'on'
+    switch.kitchen_closet_light:
+      state: 'on'
+    switch.kitchen_counter_light_d:
+      state: 'on'
+    switch.kitchen_counter_light_m:
+      state: 'on'
+    light.living_room_light:
+      state: 'on'
+    switch.upstairs_bathroom_switch:
+      state: 'on'
+    switch.jy_shabbos_lamp:
+      state: 'on'
+    switch.kendra_shabbos_lamp:
+      state: 'on'
+    switch.kendra_noise_machine:
+      state: 'on'
+    switch.downstairs_bathroom_light:
+      state: 'on'
+    switch.den_lamp:
+      state: 'on'
+    switch.den_light:
+      state: 'on'
+    light.dining_room_main_lights:
+      state: 'on'
+    switch.kitchen_lights_d:
+      state: 'on'
+    switch.kitchen_lights_m:
+      state: 'on'
+    switch.kitchen_lights_table:
+      state: 'on'
+    switch.basement_lights:
+      state: 'off'
+    switch.basement_stairs:
+      state: 'off'
+    switch.upstairs_hallway_light:
+      state: 'off'
+    switch.ella_light:
+      state: 'off'
+    switch.noa_light:
+      state: 'off'
+    switch.kendra_table_lamp:
+      state: 'off'
+    light.master_bedroom_lights:
+      state: 'off'
+    switch.downstairs_bathroom_sconce:
+      state: 'off'
+    light.upstairs_bathroom_light:
+      state: 'on'
+      brightness: 255
+
+- name: Shabbat_Night
+  entities:
+    switch.downstairs_bathroom_light:
+      state: 'off'
+    switch.den_light:
+      state: 'off'
+    switch.den_lamp:
+      state: 'off'
+    light.dining_room_main_lights:
+      state: 'off'
+    switch.kitchen_lights_d:
+      state: 'off'
+    switch.kitchen_lights_m:
+      state: 'off'
+    switch.kitchen_lights_table:
+      state: 'off'
+    switch.downstairs_bathroom_sconce:
+      state: 'on'
+    light.upstairs_bathroom_light:
+      state: 'on'
+      brightness: 80
+
+- name: Shabbat_Morning
+  entities:
+    switch.downstairs_bathroom_light:
+      state: 'on'
+    switch.den_light:
+      state: 'on'
+    switch.den_lamp:
+      state: 'on'
+    light.dining_room_main_lights:
+      state: 'on'
+    switch.kitchen_lights_d:
+      state: 'on'
+    switch.kitchen_lights_m:
+      state: 'on'
+    switch.kitchen_lights_table:
+      state: 'on'
+    switch.downstairs_bathroom_sconce:
+      state: 'off'
+    light.upstairs_bathroom_light:
+      state: 'on'
+      brightness: 255

@@ -1,0 +1,15 @@
+# The LEDs in the bathroom can only dim down so the script turns them on
+# at 100% and then turns them down
+shab_brdim:
+  sequence:
+  - service: light.turn_on
+    data:
+      entity_id: light.upstairs_bathroom_light
+      brightness: 255
+  - delay: '2'
+  - service: light.turn_on
+    data:
+      entity_id: light.upstairs_bathroom_light
+      brightness: 80
+  mode: single
+

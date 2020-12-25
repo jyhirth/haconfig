@@ -6,10 +6,10 @@ exteriorlights:
 
 shabbatalwayson:
   name: Shabbat Always On
+  all: true
   entities:
     - switch.boiler_room_bulb
     - switch.laundry_room_bulb
-    - switch.dining_room_single_light
     - switch.kitchen_closet_light
     - switch.kitchen_counter_light_d
     - switch.kitchen_counter_light_m
@@ -18,6 +18,7 @@ shabbatalwayson:
     - switch.jy_shabbos_lamp
     - switch.kendra_shabbos_lamp
     - switch.kendra_noise_machine
+    - light.upstairs_bathroom_light
 
 shabbatalwaysoff:
   name: Shabbat Always Off
@@ -32,21 +33,11 @@ shabbatalwaysoff:
 
 shabbatdayon:
   name: Shabbat Day On
+  all: true
   entities:
     - switch.downstairs_bathroom_light
     - switch.den_lamp
     - switch.den_light
-    - light.dining_room_main_lights
-    - switch.kitchen_lights_d
-    - switch.kitchen_lights_m
-    - switch.kitchen_lights_table
-
-shabbatnightoff:
-  name: Shabbat Night Off
-  entities:
-    - switch.downstairs_bathroom_light
-    - switch.den_light
-    - switch.den_lamp
     - light.dining_room_main_lights
     - switch.kitchen_lights_d
     - switch.kitchen_lights_m
