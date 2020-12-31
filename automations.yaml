@@ -13,12 +13,12 @@
 - alias: Turn off the bathroom fan after 10 mins
   trigger:
   - platform: state
-    entity_id: switch.hs_downstairs_bathroom_fan
+    entity_id: switch.downstairs_bathroom_fan
     to: 'on'
     for: 00:10:00
   action:
   - service: switch.turn_off
-    entity_id: switch.hs_downstairs_bathroom_fan
+    entity_id: switch.downstairs_bathroom_fan
   mode: single
 
 - alias: Turn on the exterior lights before sunset
@@ -65,6 +65,7 @@
   action:
     - service: scene.turn_on
       entity_id: scene.shabbat_night
+  mode: single
 
 - alias: Shabbat Morning
   trigger:
@@ -78,6 +79,7 @@
   action:
     - service: scene.turn_on
       entity_id: scene.shabbat_morning
+  mode: single
 
 - alias: Shabbat Day Sentry
   trigger:
