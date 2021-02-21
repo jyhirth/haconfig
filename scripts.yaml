@@ -1,15 +1,54 @@
-# The LEDs in the bathroom can only dim down so the script turns them on
-# at 100% and then turns them down
-shab_brdim:
+turn_on_the_bathroom_light_to_dimmed:
   sequence:
   - service: light.turn_on
     data:
       entity_id: light.upstairs_bathroom_light
       brightness: 255
-  - delay: '2'
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
   - service: light.turn_on
     data:
       entity_id: light.upstairs_bathroom_light
       brightness: 80
   mode: single
-
+  alias: Turn on the Bathroom Light to Dimmed
+shabbat_day_actions:
+  alias: Shabbat Day Actions
+  sequence:
+  - service: homeassistant.turn_on
+    data: {}
+    entity_id: group.shabbatalwayson
+  - service: homeassistant.turn_on
+    data: {}
+    entity_id: group.shabbatdayon
+  - service: homeassistant.turn_off
+    data: {}
+    entity_id: group.shabbatalwaysoff
+  - service: light.turn_on
+    data: {}
+    entity_id: light.upstairs_bathroom_light
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.downstairs_bathroom_sconce
+  mode: single
+shabbat_night_actions:
+  alias: Shabbat Night Actions
+  sequence:
+  - service: homeassistant.turn_on
+    data: {}
+    entity_id: group.shabbatalwayson
+  - service: homeassistant.turn_off
+    data: {}
+    entity_id: group.shabbatdayon
+  - service: homeassistant.turn_off
+    data: {}
+    entity_id: group.shabbatalwaysoff
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.downstairs_bathroom_sconce
+  - service: script.turn_on_the_bathroom_light_to_dimmed
+    data: {}
+  mode: single

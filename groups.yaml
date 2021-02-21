@@ -8,8 +8,8 @@ shabbatalwayson:
   name: Shabbat Always On
   all: true
   entities:
-    - switch.boiler_room_bulb
-    - switch.laundry_room_bulb
+    - light.boiler_room_bulb
+    - light.laundry_room_bulb
     - switch.kitchen_closet_light
     - switch.kitchen_counter_light_d
     - switch.kitchen_counter_light_m
@@ -23,8 +23,6 @@ shabbatalwayson:
 shabbatalwaysoff:
   name: Shabbat Always Off
   entities:
-    - switch.basement_lights
-    - switch.basement_stairs
     - switch.upstairs_hallway_light
     - switch.ella_light
     - switch.noa_light
@@ -35,6 +33,8 @@ shabbatdayon:
   name: Shabbat Day On
   all: true
   entities:
+    - switch.basement_lights
+    - switch.basement_stairs
     - switch.downstairs_bathroom_light
     - switch.den_lamp
     - switch.den_light
