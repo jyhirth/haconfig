@@ -5,7 +5,7 @@
 !*.yaml
 !.gitignore
 !*.md
-!node-red/flows.json
+!*flows.json
 
 # Ignore folders.
 .storage
