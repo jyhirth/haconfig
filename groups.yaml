@@ -28,12 +28,12 @@ shabbatalwaysoff:
     - switch.noa_light
     - switch.kendra_table_lamp
     - light.master_bedroom_lights
-
+    - switch.basement_lights
+    
 shabbatdayon:
   name: Shabbat Day On
   all: true
   entities:
-    - switch.basement_lights
     - switch.basement_stairs
     - switch.downstairs_bathroom_light
     - switch.den_lamp
@@ -42,3 +42,42 @@ shabbatdayon:
     - switch.kitchen_lights_d
     - switch.kitchen_lights_m
     - switch.kitchen_lights_table
+
+allpresencesensors:
+  name: All Presence Sensors
+  entities:
+    - binary_sensor.den
+    - binary_sensor.dining_room
+    - binary_sensor.ella
+    - binary_sensor.kitchen
+    - binary_sensor.living_room
+    - binary_sensor.main_floor
+    - binary_sensor.main_floor_2
+    - binary_sensor.master_bedroom
+    - binary_sensor.noa
+    
+SleepOff:
+  name: Off when Asleep
+  entities:
+    - switch.basement_lights
+    - light.laundry_room_bulb
+    - light.boiler_room_bulb
+    - switch.basement_stairs
+    - switch.downstairs_bathroom_light
+    - switch.downstairs_bathroom_sconce
+    - switch.kitchen_lights_d
+    - switch.kitchen_lights_m
+    - switch.kitchen_lights_table
+    - switch.kitchen_closet_light
+    - light.living_room_light
+    - light.dining_room_main_lights
+    - switch.den_light
+    - switch.den_lamp
+
+SleepOn:
+  name: On when Asleep
+  all: true
+  entities:
+    - switch.kitchen_counter_light_d
+    - switch.kitchen_counter_light_m
+    - switch.dining_room_single_light

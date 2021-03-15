@@ -21,12 +21,27 @@ shabbat_day_actions:
   - service: homeassistant.turn_on
     data: {}
     entity_id: group.shabbatalwayson
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 3
+      milliseconds: 0
   - service: homeassistant.turn_on
     data: {}
     entity_id: group.shabbatdayon
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 3
+      milliseconds: 0
   - service: homeassistant.turn_off
     data: {}
     entity_id: group.shabbatalwaysoff
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 3
+      milliseconds: 0
   - service: light.turn_on
     data: {}
     entity_id: light.upstairs_bathroom_light
@@ -40,9 +55,19 @@ shabbat_night_actions:
   - service: homeassistant.turn_on
     data: {}
     entity_id: group.shabbatalwayson
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 3
+      milliseconds: 0
   - service: homeassistant.turn_off
     data: {}
     entity_id: group.shabbatdayon
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 3
+      milliseconds: 0
   - service: homeassistant.turn_off
     data: {}
     entity_id: group.shabbatalwaysoff
@@ -50,5 +75,20 @@ shabbat_night_actions:
     data: {}
     entity_id: switch.downstairs_bathroom_sconce
   - service: script.turn_on_the_bathroom_light_to_dimmed
+    data: {}
+  mode: single
+sleep_actions:
+  alias: Sleep Actions
+  sequence:
+  - service: homeassistant.turn_on
+    data: {}
+    entity_id: group.sleepon
+  - service: homeassistant.turn_off
+    data: {}
+    entity_id: group.sleepoff
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.sl
+  - service: notify.mobile_app_j_ys_iphone
     data: {}
   mode: single

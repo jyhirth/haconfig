@@ -49,6 +49,12 @@ binary_sensor:
         friendly_name: "Shabbat Day"
         value_template: >-
           {{ states.input_datetime.shabbat_morning_begins.state < states('sensor.time')  < states.input_datetime.shabbat_night_begins.state }}
+  - platform: template
+    sensors:
+      awake:
+        friendly_name: "Awake Hours"
+        value_template: >-
+          {{ states.input_datetime.awake_begins.state < states('sensor.time')  < states.input_datetime.asleep_begins.state }}
 
 history:
   exclude:
