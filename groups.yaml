@@ -28,7 +28,6 @@ shabbatalwaysoff:
     - switch.noa_light
     - switch.kendra_table_lamp
     - light.master_bedroom_lights
-    - switch.basement_lights
     
 shabbatdayon:
   name: Shabbat Day On
@@ -42,17 +41,16 @@ shabbatdayon:
     - switch.kitchen_lights_d
     - switch.kitchen_lights_m
     - switch.kitchen_lights_table
-
-allpresencesensors:
-  name: All Presence Sensors
+    - switch.basement_lights
+    
+sleeppresencesensors:
+  name: Sleep Presence Sensors
   entities:
     - binary_sensor.den
     - binary_sensor.dining_room
     - binary_sensor.ella
     - binary_sensor.kitchen
     - binary_sensor.living_room
-    - binary_sensor.main_floor
-    - binary_sensor.main_floor_2
     - binary_sensor.master_bedroom
     - binary_sensor.noa
     
@@ -81,3 +79,4 @@ SleepOn:
     - switch.kitchen_counter_light_d
     - switch.kitchen_counter_light_m
     - switch.dining_room_single_light
+    - switch.sleep

@@ -42,12 +42,12 @@ shabbat_day_actions:
       minutes: 0
       seconds: 3
       milliseconds: 0
-  - service: light.turn_on
-    data: {}
-    entity_id: light.upstairs_bathroom_light
-  - service: switch.turn_off
-    data: {}
-    entity_id: switch.downstairs_bathroom_sconce
+  - service: homeassistant.turn_on
+    target:
+      entity_id: light.upstairs_bathroom_light
+  - service: homeassistant.turn_off
+    target:
+      entity_id: switch.downstairs_bathroom_sconce
   mode: single
 shabbat_night_actions:
   alias: Shabbat Night Actions
@@ -71,9 +71,9 @@ shabbat_night_actions:
   - service: homeassistant.turn_off
     data: {}
     entity_id: group.shabbatalwaysoff
-  - service: switch.turn_on
-    data: {}
-    entity_id: switch.downstairs_bathroom_sconce
+  - service: homeassistant.turn_on
+    target:
+      entity_id: switch.downstairs_bathroom_sconce
   - service: script.turn_on_the_bathroom_light_to_dimmed
     data: {}
   mode: single
@@ -86,9 +86,7 @@ sleep_actions:
   - service: homeassistant.turn_off
     data: {}
     entity_id: group.sleepoff
-  - service: switch.turn_on
-    data: {}
-    entity_id: switch.sl
   - service: notify.mobile_app_j_ys_iphone
-    data: {}
+    data:
+      message: Sleep mode activated
   mode: single
