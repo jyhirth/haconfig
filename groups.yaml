@@ -10,6 +10,7 @@ shabbatalwayson:
   entities:
     - light.boiler_room_bulb
     - light.laundry_room_bulb
+    - switch.basement_stairs
     - switch.kitchen_closet_light
     - switch.kitchen_counter_light_d
     - switch.kitchen_counter_light_m
@@ -33,7 +34,6 @@ shabbatdayon:
   name: Shabbat Day On
   all: true
   entities:
-    - switch.basement_stairs
     - switch.downstairs_bathroom_light
     - switch.den_lamp
     - switch.den_light
@@ -57,10 +57,8 @@ sleeppresencesensors:
 SleepOff:
   name: Off when Asleep
   entities:
-    - switch.basement_lights
     - light.laundry_room_bulb
     - light.boiler_room_bulb
-    - switch.basement_stairs
     - switch.downstairs_bathroom_light
     - switch.downstairs_bathroom_sconce
     - switch.kitchen_lights_d
@@ -76,6 +74,7 @@ SleepOn:
   name: On when Asleep
   all: true
   entities:
+    - switch.basement_lights
     - switch.kitchen_counter_light_d
     - switch.kitchen_counter_light_m
     - switch.dining_room_single_light

@@ -16,7 +16,7 @@ http:
   use_x_forwarded_for: true
   trusted_proxies:
     - 192.168.24.180  # Add the IP address of the proxy server
-    - 172.30.33.0/24  # You may also provide the subnet mask
+    - 192.168.24.0/24 # You may also provide the subnet mask
   
 # Text to speech
 tts:
